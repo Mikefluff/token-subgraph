@@ -21,7 +21,7 @@ $ npm run  build-ipfs --verbosity debug > .ipfs.hash
 ```bash
 $ cargo run -p graph-node --release -- \
     --postgres-url postgresql://localhost:5432/token-transfer \
-    --ethereum-rpc https://kovan.infura.io \
+    --ethereum-rpc http://kovan.infura.io/ \
     --ipfs 127.0.0.1:5001 \
     --subgraph <IPFS_HASH from .ipfs.hash>
 ```
