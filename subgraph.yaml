@@ -1,0 +1,24 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: ERC20Token
+    source:
+      address: "0x9fdf79b01ee6b4712c701fe34369b3e0e8274c6b"
+      abi: ERC20Token
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.1
+      language: wasm/assemblyscript
+      file: ./mappings/erc20-token.ts
+      entities:
+        - Transfer
+      abis:
+        - name: ERC20Token
+          file: ./abis/erc20-token.json
+      eventHandlers:
+        - event: Transfer(address,address,uint256)
+          handler: tokenTransferred
+        - event: Approval(address,address,uint256)
+          handler: tokenApproved

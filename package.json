@@ -1,0 +1,34 @@
+{
+  "name": "token-subgraph",
+  "version": "1.0.0",
+  "description": "Token subgraph mapping for graph-node protocol",
+  "main": "index.js",
+  "scripts": {
+    "codegen": "graph codegen subgraph.yaml",
+    "build": "graph build subgraph.yaml",
+    "build-ipfs": "graph build --ipfs /ip4/127.0.0.1/tcp/5001 subgraph.yaml",
+    "build-wast": "graph build -t wast subgraph.yaml",
+    "lint": "tslint -c tslint.json mappings/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maticnetwork/token-subgraph.git"
+  },
+  "keywords": [
+    "ethereum",
+    "token",
+    "graphql",
+    "graph"
+  ],
+  "author": "Jaynti Kanani <jdkanani@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maticnetwork/token-subgraph/issues"
+  },
+  "homepage": "https://github.com/maticnetwork/token-subgraph#readme",
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.2.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1"
+  }
+}

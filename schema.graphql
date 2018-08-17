@@ -1,0 +1,11 @@
+type TransferEntity {
+  from: Bytes
+  to: Bytes
+  amount: String
+}
+
+type ApprovalEntity {
+  owner: Bytes
+  spender: Bytes
+  amount: String
+}
