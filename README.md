@@ -32,7 +32,7 @@ You can open graphiQL UI at http://localhost:8000
 
 ```
 {
-  transfers (first: 50) {
+  transferEntities (first: 10) {
     from
     to
     amount

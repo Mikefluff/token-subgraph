@@ -7,12 +7,7 @@ export function tokenTransferred(event: Transfer): void {
   transferEntity.setU256("amount", event.params._value);
 
   // Apply store updates (insert or update if entity already exists)
-  store.set(
-    event.blockHash,
-    "TransferEntity",
-    `Transfer:${event.blockHash}:${event.address}`,
-    transferEntity
-  );
+  store.set("TransferEntity", event.blockHash.toString(), transferEntity);
 }
 
 // Respond to application white listed events
@@ -24,10 +19,5 @@ export function tokenApproved(event: Approval): void {
   approvalEntity.setU256("amount", event.params._value);
 
   // Apply store updates (insert or update if entity already exists)
-  store.set(
-    event.blockHash,
-    "ApprovalEntity",
-    `Approval:${event.blockHash}:${event.address}`,
-    approvalEntity
-  );
+  store.set("ApprovalEntity", event.blockHash.toString(), approvalEntity);
 }
